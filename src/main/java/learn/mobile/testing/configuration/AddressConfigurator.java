@@ -23,12 +23,12 @@ public class AddressConfigurator {
 
   public static AppiumDriverLocalService getAppiumDriverLocalService(int port) {
       if (appiumDriverLocalService == null) {
-          startServise(port);
+          startService(port);
       }
     return appiumDriverLocalService;
   }
 
-  public static void startServise(int port) {
+  public static void startService(int port) {
     makeAvailableIfOccupied(port);
     appiumDriverLocalService = new AppiumServiceBuilder()
         .withIPAddress(ConfigurationReader.get().appiumAddress())
